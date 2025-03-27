@@ -12,7 +12,7 @@
 
 MAS mas01 {
 
-    agents: alice agentArchClass group.chon.agent.concierge.Concierge;
+    agents: alice agentArchClass jason.Concierge;
 
     aslSourcePath: "src/agt";
 }

@@ -1,7 +1,7 @@
 MAS mutualism {
 	infrastructure: Centralised
 	agents:
-		kirk agentArchClass group.chon.agent.concierge.Concierge;
+		kirk agentArchClass jason.Concierge;
 		spock;
 	aslSourcePath:
 		"asl";
