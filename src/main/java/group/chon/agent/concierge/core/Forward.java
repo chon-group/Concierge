@@ -6,14 +6,18 @@ import com.google.gson.JsonObject;
 import java.util.logging.Logger;
 
 public class Forward {
-    private Logger logger = Logger.getLogger("Concierge");
+    private Logger logger;
     private JsonArray ruleList = group.chon.agent.concierge.core.Base.getGuidances();
     private JsonArray policyList = group.chon.agent.concierge.core.Base.getPolicies();
+
+    public Forward(Logger logger) {
+        this.logger = logger;
+    }
 
     public boolean isAcceptable(String way, String scope, String address, String type) {
 
        if(applicableGuidance(way,scope,address,type)){
-           logger.info("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
+           logger.fine("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
            return true;
        }else{
            logger.info("REJECTED! "+way+" "+scope+" "+address+" "+type);

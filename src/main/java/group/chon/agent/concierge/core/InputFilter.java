@@ -12,8 +12,8 @@ import java.util.List;
 
 public class InputFilter extends group.chon.agent.hermes.core.InComingMessages {
 
-
-    public InputFilter(BioinspiredData bioinspiredData, HashMap<String, CommunicationMiddleware> communicationMiddlewares) {
+    public InputFilter(BioinspiredData bioinspiredData, HashMap<String,
+            CommunicationMiddleware> communicationMiddlewares) {
         super(bioinspiredData, communicationMiddlewares);
     }
 
@@ -22,7 +22,7 @@ public class InputFilter extends group.chon.agent.hermes.core.InComingMessages {
                                  CommunicationMiddleware communicationMiddleware,
                                  String connectionIdentifier) {
 
-        Forward forward = new Forward();
+        Forward forward = new Forward(group.chon.agent.concierge.core.Base.getLogger());
         Iterator<String> iterator = receivedEncryptedMessages.iterator();
         while (iterator.hasNext()) {
             String receivedEncryptedMessage = iterator.next();
