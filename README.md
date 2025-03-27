@@ -3,6 +3,8 @@
 
 A Multi-Agent System (MAS) is a society of agents that share the same environment and act autonomously to achieve their own goals, being able to cooperate or compete. Some of these societies may be open, and their agents may come and go freely. However, freely migrating agents can present security risks to the SMA, as an agent can be malicious. This work presents an approach that contributes to migration control, aiming to prevent communication or access by unauthorized agents. To this end, we propose an extension of the communicator agents architecture, implementing a firewall model for MAS.
 
+![concierge](https://github.com/user-attachments/assets/eb86ce25-244c-4425-9f5e-9824d0b0538f)
+
 
 
 ## Copyright
