@@ -1,6 +1,6 @@
 /* Initial beliefs and rules */
 abroad(yes). 
-skyNet("10.0.3.9",5500). 
+skyNet("skynet.chon.group",5500).
 scott("07ba9e4a-d539-4a0e-8c14-4ac336476858").
 myUUID("41ff1712-b2f0-416d-8232-fef834651e77").
 

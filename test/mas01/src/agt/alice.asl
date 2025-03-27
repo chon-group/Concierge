@@ -1,5 +1,5 @@
 /*beliefs*/
-skyNet("10.0.3.9",5500). //More info: https://doi.org/10.5753/wei.2023.229753 
+skyNet("skynet.chon.group",5500). //More info: https://doi.org/10.5753/wei.2023.229753
 myUUID("07ba9e4a-d539-4a0e-8c14-4ac336476858").
 
 /* initial plan */
