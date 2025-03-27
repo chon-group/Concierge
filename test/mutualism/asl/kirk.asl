@@ -11,8 +11,7 @@ myUUID("41ff1712-b2f0-416d-8232-fef834651e77").
 +!conf : abroad(yes) & myUUID(ID) & (skyNet(Server,Port)) & scott(Scotty) <- 
 	.concierge.policy(all,all,all,drop);
 	.concierge.guidance(all,all,Scotty,all,accept);
-	.hermes.configureContextNetConnection("skyNET", Server, Port, ID);
-	.hermes.connect("skyNET");
+	.concierge.connectCN(Server, Port, ID);
 	!start.
 		
 +!conf : abroad(no) <- 

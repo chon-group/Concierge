@@ -11,8 +11,7 @@ myUUID("07ba9e4a-d539-4a0e-8c14-4ac336476858").
 	?skyNet(Server,Port);
 	.concierge.policy(all,migration,all,drop);
 	.concierge.guidance(all,all,"41ff1712-b2f0-416d-8232-fef834651e77",all,accept);
-	.hermes.configureContextNetConnection("skyNET", Server, Port, ID);
-	.hermes.connect("skyNET");
+	.concierge.connectCN(Server, Port, ID);
 	.print("Computer, Commander Montgomery Scott, Chief Engineering Office").
 
 +beam_us_up_scotty[source(X)] <-
