@@ -9,6 +9,8 @@ myUUID("07ba9e4a-d539-4a0e-8c14-4ac336476858").
 +!start <-
 	?myUUID(ID);
 	?skyNet(Server,Port);
+	.concierge.policy(all,all,all,accept);
+	//.concierge.guidance(all,all,Scotty,all,accept);
 	.hermes.configureContextNetConnection("skyNET", Server, Port, ID);
 	.hermes.connect("skyNET");
 	.print("Computer, Commander Montgomery Scott, Chief Engineering Office").

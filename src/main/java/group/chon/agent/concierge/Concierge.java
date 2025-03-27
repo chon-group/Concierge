@@ -1,5 +1,7 @@
 package group.chon.agent.concierge;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import group.chon.agent.hermes.Hermes;
 import group.chon.agent.concierge.core.InputFilter;
 import java.util.List;
@@ -11,7 +13,9 @@ import group.chon.agent.hermes.core.capabilities.socialSkillsWithOutside.SendOut
 import jason.asSemantics.Message;
 
 public class Concierge extends Hermes {
-    Logger logger = Logger.getLogger("Concierge");
+    private Logger logger = Logger.getLogger("Concierge");
+
+
     public Concierge(){
         super();
         logger.info("Concierge Agt Architecture");
@@ -25,4 +29,14 @@ public class Concierge extends Hermes {
         SendOutProcessor.processMessages(allReceivedMessages, this);
         BioinspiredProcessor.processMessages(this, inMessages);
     }
+
+
+//    public void setFirewallPolicy(JsonObject p) {
+//        try {
+//            policyList.add(p);
+//            logger.info(policyList.size()+" politica adicionada com sucesso!");
+//        }catch(Exception e){
+//            logger.info("Deu error para acrescentar na lista de politicas");
+//        }
+//    }
 }
