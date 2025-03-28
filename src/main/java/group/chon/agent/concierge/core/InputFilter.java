@@ -36,7 +36,7 @@ public class InputFilter extends group.chon.agent.hermes.core.InComingMessages {
                 if (!forward.isAcceptable("input",             /* way          */
                         "communication",                            /* scope        */
                         decryptedMessage.getSender(),               /* from         */
-                        decryptedMessage.getIlForce())) {           /* kqml force   */
+                        decryptedMessage.getIlForce().toLowerCase())) {           /* kqml force   */
                     iterator.remove();                          /* message REJECTED */
                     continue;
                 }
@@ -49,7 +49,7 @@ public class InputFilter extends group.chon.agent.hermes.core.InComingMessages {
                 if (!forward.isAcceptable("input",                                          /* way               */
                         "migration",                                                             /* scope             */
                         agentTransferRequestMessageDto.getSenderIdentification(),                /* from              */
-                        agentTransferRequestMessageDto.getBioinspiredProtocol().toString())) {   /* migration protocol*/
+                        agentTransferRequestMessageDto.getBioinspiredProtocol().toString().toLowerCase())) {   /* migration protocol*/
                     iterator.remove();                                                          /* migration REJECTED */
                 }
             }

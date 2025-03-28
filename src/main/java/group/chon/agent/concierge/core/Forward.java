@@ -17,7 +17,7 @@ public class Forward {
     public boolean isAcceptable(String way, String scope, String address, String type) {
 
        if(applicableGuidance(way,scope,address,type)){
-           logger.fine("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
+           logger.info("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
            return true;
        }else{
            logger.info("REJECTED! "+way+" "+scope+" "+address+" "+type);
@@ -86,11 +86,14 @@ public class Forward {
 
     private boolean isValidIlForceOrProtocol(String protocolo, String protocoloMensagem){
         if (protocolo.equals("all")) {
-            switch (protocoloMensagem) {
+            switch (protocoloMensagem.toLowerCase()) {
                 case "tell":
                 case "untell":
+                case "tellhow":
+                case "untellhow":
                 case "askone":
                 case "askall":
+                case "askhow":
                 case "achieve":
                 case "unachieve":
                 case "mutualism":
@@ -99,17 +102,20 @@ public class Forward {
                     return true;
             }
         }else if (protocolo.equals("kqml")) {
-            switch (protocoloMensagem) {
+            switch (protocoloMensagem.toLowerCase()) {
                 case "tell":
                 case "untell":
+                case "tellhow":
+                case "untellhow":
                 case "askone":
                 case "askall":
+                case "askhow":
                 case "achieve":
                 case "unachieve":
                     return true;
             }
         } else if (protocolo.equals("bioinsp")) {
-            switch (protocoloMensagem) {
+            switch (protocoloMensagem.toLowerCase()) {
                 case "mutualism":
                 case "inquilinism":
                 case "predation":

@@ -15,7 +15,7 @@ public class sendOut extends group.chon.agent.hermes.jasonStdLib.sendOut{
             if (forward.isAcceptable("output",
                     "communication",
                     args[0].toString().replaceAll("\"",""),
-                    args[1].toString().replaceAll("\"",""))) {
+                    args[1].toString().replaceAll("\"","").toLowerCase())) {
                 return super.execute(ts, un, args);
             }else{
                 return true;

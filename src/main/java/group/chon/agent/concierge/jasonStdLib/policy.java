@@ -60,7 +60,7 @@ public class policy extends DefaultInternalAction{
                             JsonObject politica = new JsonObject();
                             politica.addProperty("tipo", args[0].toString());
                             politica.addProperty("abrangencia", args[1].toString());
-                            politica.addProperty("protocolo", args[2].toString());
+                            politica.addProperty("protocolo", args[2].toString().toLowerCase());
                             politica.addProperty("determinacao", args[3].toString());
                             //ts.getUserAgArch().setFirewallPolicy(politica);
                             group.chon.agent.concierge.core.Base.addPolicy(politica,ts.getLogger());
@@ -76,14 +76,17 @@ public class policy extends DefaultInternalAction{
 
     private boolean validarProtocolo(String protocolo, String abrangencia){
         if (abrangencia.equals("all")) {
-            switch (protocolo) {
+            switch (protocolo.toLowerCase()) {
                 case "all":
                 case "kqml":
                 case "bioinsp":
                 case "tell":
                 case "untell":
-                case "askOne":
-                case "askAll":
+                case "tellhow":
+                case "untellhow":
+                case "askone":
+                case "askall":
+                case "askhow":
                 case "achieve":
                 case "unachieve":
                 case "mutualism":
@@ -92,19 +95,22 @@ public class policy extends DefaultInternalAction{
                     return true;
             }
         }else if (abrangencia.equals("communication")) {
-            switch (protocolo) {
+            switch (protocolo.toLowerCase()) {
                 case "all":
                 case "kqml":
                 case "tell":
                 case "untell":
-                case "askOne":
-                case "askAll":
+                case "tellhow":
+                case "untellhow":
+                case "askone":
+                case "askall":
+                case "askhow":
                 case "achieve":
                 case "unachieve":
                     return true;
             }
         } else if (abrangencia.equals("migration")) {
-            switch (protocolo) {
+            switch (protocolo.toLowerCase()) {
                 case "all":
                 case "bioinsp":
                 case "mutualism":

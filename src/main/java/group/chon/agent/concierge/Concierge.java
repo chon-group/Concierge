@@ -17,7 +17,7 @@ public class Concierge extends Hermes {
 
     public Concierge(){
         super();
-        logger.info("Agent Architecture (version 25.03.27)");
+        logger.info("Agent Architecture (version 25.03.28)");
     }
 
     @Override

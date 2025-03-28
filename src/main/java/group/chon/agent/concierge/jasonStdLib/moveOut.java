@@ -16,7 +16,7 @@ public class moveOut extends group.chon.agent.hermes.jasonStdLib.moveOut{
             if (forward.isAcceptable("output",
                     "migration",
                     args[0].toString().replaceAll("\"",""),
-                    args[1].toString().replaceAll("\"","").toUpperCase())) {
+                    args[1].toString().replaceAll("\"","").toLowerCase())) {
                 return super.execute(ts, un, args);
             }else{
                 return true;
