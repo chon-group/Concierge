@@ -17,7 +17,7 @@ public class Forward {
     public boolean isAcceptable(String way, String scope, String address, String type) {
 
        if(applicableGuidance(way,scope,address,type)){
-           logger.info("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
+           logger.fine("ACCEPTED! "+way+" "+scope+" "+address+" "+type);
            return true;
        }else{
            logger.info("REJECTED! "+way+" "+scope+" "+address+" "+type);
