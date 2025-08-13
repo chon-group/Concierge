@@ -1,8 +1,0 @@
-MAS mutualism {
-	infrastructure: Centralised
-	agents:
-		kirk agentArchClass jason.Concierge;
-		spock;
-	aslSourcePath:
-		"asl";
-}

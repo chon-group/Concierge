@@ -43,7 +43,8 @@ public class Forward {
             for (int i = 0; i < this.ruleList.size(); i++) {
                 if (this.ruleList.get(i).getAsJsonObject().get("tipo").getAsString().equals("all")
                         || this.ruleList.get(i).getAsJsonObject().get("tipo").getAsString().equals(mensagem.get("tipo").getAsString())) {
-                    if (this.ruleList.get(i).getAsJsonObject().get("endereco").getAsString().equals(mensagem.get("endereco").toString())) {
+                    if (this.ruleList.get(i).getAsJsonObject().get("endereco").getAsString().equals(mensagem.get("endereco").toString())
+                        || matchAddress(this.ruleList.get(i).getAsJsonObject().get("endereco").getAsString(), mensagem.get("endereco").toString())) {
                         if (this.ruleList.get(i).getAsJsonObject().get("protocolo").getAsString().equals(mensagem.get("protocolo").getAsString().toLowerCase())
                                 || this.ruleList.get(i).getAsJsonObject().get("protocolo").getAsString().equals("all")
                                 || isValidIlForceOrProtocol(this.ruleList.get(i).getAsJsonObject().get("protocolo").getAsString(), mensagem.get("protocolo").getAsString().toLowerCase())){
@@ -180,6 +181,11 @@ public class Forward {
         return resultado;
     }
 
-
+    private boolean matchAddress(String padrao, String endereco) {
+        String regex = padrao.replace(".", "\\.")
+                .replace("-", "\\-")
+                .replace("*", ".*");
+        return endereco.matches(regex);
+    }
 
 }
